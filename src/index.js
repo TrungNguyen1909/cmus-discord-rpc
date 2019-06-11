@@ -31,9 +31,9 @@ client.once('ready', () => {
                 duration : (out.find(arg => arg.startsWith('duration')) || []).split(' ')[1]
             },
             metadata : {
-                title : (out.find(arg => arg.startsWith('tag title')) || []).split(' ').slice(2).join(' '),
-                artist : (out.find(arg => arg.startsWith('tag artist')) || []).split(' ').slice(2).join(' '),
-                album: (out.find(arg => arg.startsWith('tag album')) || []).split(' ').slice(2).join(' ')
+                title : (out.find(arg => arg.startsWith('tag title ')) || []).split(' ').slice(2).join(' '),
+                artist : (out.find(arg => arg.startsWith('tag artist ')) || []).split(' ').slice(2).join(' '),
+                album: (out.find(arg => arg.startsWith('tag album ')) || []).split(' ').slice(2).join(' ')
             }
         };
         
