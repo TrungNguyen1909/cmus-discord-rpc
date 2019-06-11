@@ -39,7 +39,7 @@ client.once('ready', () => {
         
         client.setActivity({
             state: `${presence.status}` + (
-                presence.time.position && 
+                presence.metadata.title && 
                 ` (${parseTime(presence.time.position)} / ${parseTime(presence.time.duration)})`
             ),
             details: (presence.metadata.title ? presence.metadata.title : 'Nothing is playing') + (
