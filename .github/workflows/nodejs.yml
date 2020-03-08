@@ -4,13 +4,13 @@ on: [push]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [10.19.0, 11.15.0, 12.16.1]
+        os: [ubuntu-16.04, ubuntu-18.04, windows-2019, macos-10.15]
 
+    name: Build for platform ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v1
     - name: Setup Node.js ${{ matrix.node-version }}
@@ -25,6 +25,6 @@ jobs:
         CI: true
     - uses: actions/upload-artifact@v1
       with:
-        name: cmus-discord-rpc-bin-node-${{ matrix.node-version }}
+        name: cmus-discord-rpc-bin_${{ matrix.os }}_node-${{ matrix.node-version }}
         path: dist/
         
