@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "build": "pkg -o dist/cmus-discord-rpc ."
+    "build": "pkg -o dist/cmus-discord-rpc-bin ."
   },
   "repository": {
     "type": "git",

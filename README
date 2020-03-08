@@ -1,5 +1,14 @@
 To use this in cmus, you'll need a single-binary build ("npm run build").
 Make one and then place it anywhere you wish.
 
-Then set it as your status displaying program.
+Then set it as your status displaying program. (Please check out the warning below.)
 See https://github.com/weisslj/cmus_lastfm_autoadd/blob/78262fecb16c88828119eb6dfe7ecac09bf523a6/README for example.
+
+WARNING:
+CMUS invokes the program for any changes.
+With the way cmus-discord-rpc works, more and more processes will be created as changes occur, eventually leading to OOMs.
+
+A reference shell script ("cmus-discord-rpc" in the repo root) is my current solution to this.
+It will attempt to pgrep for the executable's process and refuse to invoke it again if one is already running.
+(On my machine, "cmus-discord-rpc-bin" is in PATH, so it works out of the box. Adjust paths & names if necessary.)
+You can set it as the status display program instead of the executable.

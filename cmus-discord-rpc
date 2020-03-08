@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+if [[ ! $(pgrep -f cmus-discord-rpc-bin) ]]; then
+    cmus-discord-rpc-bin
+fi
