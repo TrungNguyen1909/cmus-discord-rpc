@@ -23,3 +23,8 @@ jobs:
       run: npm run build 
       env:
         CI: true
+    - uses: actions/upload-artifact@v1
+      with:
+        name: cmus-discord-rpc-bin-node-${{ matrix.node-version }}
+        path: dist/
+        
